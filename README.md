@@ -8,7 +8,7 @@ The Location-Based Meeting Reminder application  aims to ensure that users
 
 
 ## Installation
-Download the zipped scr file [here](https://github.com/VanessaHanna05/The-Location-Based-Calendar/archive/refs/heads/main.zip)
+Download the zipped scr file [here](https://github.com/VanessaHanna05/adapter-design-pattern/archive/refs/heads/main.zip)
 
 Extract the documents of the src folder.
 

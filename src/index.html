@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Calendar App</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">Back</button>
+          <button id="nextButton">Next</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+
+    <div id="eventSummary">
+      <h1 id="summary">EVENT SUMMARY</h1>
+      <ul id="event-list"></ul>
+    </div>
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <input list="meetingTypes" placeholder = "meeting Type" id="types" onfocus="this.value=''" onchange="this.blur();">
+
+      <datalist id="meetingTypes">
+        <option value="online">
+        <option value="live">
+        <option value="personal">
+        <option value="exam">
+        <option value="other">
+      </datalist>
+
+      <input id="eventLocationName" placeholder="Event Location Name" />
+      <input id="eventCityInput" placeholder="Event City Location" />
+      <input id="eventCountryInput" placeholder="Event Country Location" />
+
+      <div id="map">
+        <div id="mapouter" class="mapouter">
+          <div id="gmap_canvas" class="gmap_canvas">
+            <iframe
+              id="iframe_id"
+              class="mapClass"
+              width="600"
+              height="500"
+              src=""
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            >
+            </iframe>
+            <a href="https://www.embedgooglemap.net">google maps embed zoom</a>
+          </div>
+        </div>
+      </div>
+
+      <input id="timePicker" type="time" />
+
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

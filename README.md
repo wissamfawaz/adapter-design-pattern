@@ -46,3 +46,9 @@ Internet connection is needed for the map and api to work
 
 The [Here API](https://developer.here.com/) was used for location tracking and duration calculation
 
+
+## Code Analysis
+
+All troubleshooting was done through the console of the insepct option in the browser in which the application is running.
+
+The information  popping in the console are irrelevant for the functionalities of the actual code however they were useful when checking if the code is working properly in the background. 

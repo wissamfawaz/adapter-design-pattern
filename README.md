@@ -46,6 +46,18 @@ Internet connection is needed for the map and api to work
 
 The [Here API](https://developer.here.com/) was used for location tracking and duration calculation
 
+Each api key generated has a certain amount of free runs therefore we have prepared a new API.
+
+When running the code and looking in the console, if the error 429 occurs, the limit of the API key has been exceeded, so inserting a new API key will do the job.
+
+THe new API key is: Zv5xVF2zNQuc6q9yCMQjnjON7z39p-bvBzCEqOfNTtk
+
+The new API key replaces the old one in two functions: the getCoordinates function and the getDuration function
+
+The API key is inserted after the following expression: apiKey= 
+
+After changing the api key, the code should run with no errors. 
+
 
 ## Code Analysis
 

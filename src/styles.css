@@ -1,0 +1,392 @@
+html {
+  padding-right:5cm;
+  background-image: url(calendar.png);
+  width:100%;
+  height:100%;;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px #0e0e0d;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#header {
+  font-family: "Poppins";
+  padding: 10px;
+  color: rgb(213, 13, 13);
+  font-size: 26px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#header button {
+  background-color: rgba(160, 159, 160, 1);
+}
+
+
+#container {
+  width: 770px;
+  position: relative;
+  padding-left: 2%;
+}
+
+
+#weekdays {
+  
+  width: 770px;
+  display: flex;
+  color: black;
+  font-size: 20px;
+
+}
+
+
+
+#weekdays div {
+  width: 100px;
+  padding: 15px;
+
+}
+
+
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+/* .day {
+
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: #3d3838;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #FFD700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5cm;
+  border-color: white;
+  color: white;
+  font-size: 20px;
+
+
+} */
+
+.day {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+  border-radius: 57% 43% 43% 57% / 43% 43% 57% 57%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.day:hover {
+  background-color: #FFD700;
+  border-radius: 50%;
+}
+
+.day+#currentDay {
+  box-shadow: 3px 3px 0px #0c0c0b;
+
+}
+
+/* .event {
+  padding: 3px;
+  background-color: red;
+  color: white;
+  border-radius: 0px;
+  max-height: 55px;
+
+  border-radius: 2px;
+  overflow: hidden;
+} */
+
+.event {
+  content: '';
+  position: absolute;
+  bottom: 19px;
+  left: 44%;
+  width: 15px;
+  height: 15px;
+  background: #cd0000f6;
+  border-radius: 50%;
+}
+.padding {
+  cursor: default !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+#newEventModal {
+  background-color: #131010;
+  padding: 25px;
+  border-radius: 5px;
+  border: 2px solid rgb(233, 225, 225);
+  color: white;
+  display: none;
+  z-index: 20;
+  width: 600px;
+  top: 10vh;
+  position: absolute;
+
+
+
+}
+
+#newEventModalWithMap {
+  display: flex;
+  flex-direction: row;
+}
+
+#map {
+  position: relative;
+  text-align: right;
+  display: none;
+  width: 600px;
+  height: 500px;
+  margin-bottom: 20px;
+
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 500px;
+  width: 600px;
+}
+
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  background-color: white;
+  border-radius: 0.2cm;
+
+}
+
+#eventCountryInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  border-radius: 0.2cm;
+
+}
+
+#eventLocationName {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  border-radius: 0.2cm;
+
+}
+
+#eventCityInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  border-radius: 0.2cm;
+
+}
+
+#timePicker {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  text-align: center;
+  border-radius: 0.2cm;
+
+}
+
+#types {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+  text-align: center;
+  border-radius: 0.2cm;
+
+
+
+}
+
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+
+#eventLocationName.error {
+  border: 2px solid red;
+
+}
+
+#eventCityInput.error {
+  border: 2px solid red;
+}
+
+#eventCountryInput.error {
+  border: 2px solid red;
+}
+
+#types.error {
+  border: 2px solid red;
+}
+
+#timePicker.error {
+  border: 2px solid red;
+}
+
+#saveButton,
+#cancelButton {
+  background-color: #d85e17;
+}
+
+
+#eventText {
+  font-size: 14px;
+}
+
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+
+
+/* Styling for Event Summary */
+
+#eventSummary {
+  font-family: "Poppins";
+  border-radius: 20px;
+  width: 70%;
+  text-align: center;
+  min-height: 80%;
+  max-height: 100%;
+
+  margin-left: 15px;
+  margin-right: 10px;
+  color: black;
+  overflow-y: scroll;
+}
+
+#event-list {
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: solid 2px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  height: fit-content;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), 25px 35px 20px rgba(0, 0, 0, 0.05), inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+  background-color: #ffffff99;
+  color: black;
+
+}
+
+.list-item:hover{
+  border-color: rgb(213, 13, 13);
+}
+
+.text-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 2px;
+  gap: 1em;
+  color: rgb(28, 28, 28);
+  width: max-content;
+
+
+}
+
+.list-btn {
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("./trash.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  
+}
+.list-btn:hover{
+  background-image: url("./ban.svg");
+}
+
